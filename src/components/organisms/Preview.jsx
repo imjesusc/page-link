@@ -2,9 +2,17 @@ import { useStore } from '../../store/store'
 
 export const Preview = () => {
   const { profile } = useStore()
+
   return (
-    <div className='h-[729px] w-[340px] border-2 border-gray-300 rounded-[50px]'>
-      {JSON.stringify(profile.name)}
+    <div className='h-[729px] w-[340px] rounded-[50px] px-4 py-6 ring-8 ring-slate-800 overflow-hidden'>
+      <article className='grid gap-3'>
+        <figure className='h-20 w-20 rounded-full overflow-hidden ring ring-gray-400 mx-auto'>
+          <img src={profile.avatar} className='w-full h-full border-0 object-cover rounded-full' />
+        </figure>
+
+        <h1 className='text-xl  font-semibold text-center'>{profile.name}</h1>
+        <p className='text-balance text-center text-gray-400'>{profile.description.length > 99 ? profile.description.slice(0, 99) + '' : profile.description}</p>
+      </article>
     </div>
   )
 }
