@@ -10,13 +10,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@tabler/icons-react": "^2.46.0",
-    "clsx": "^2.1.0",
-    "js-base64": "^3.7.5",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "tailwind-merge": "^2.2.0",
-    "zustand": "^4.4.7"
+    "@tabler/icons-react": "2.46.0",
+    "clsx": "2.1.0",
+    "js-base64": "3.7.5",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "tailwind-merge": "2.2.0",
+    "zustand": "4.4.7",
+    "react-router-dom": "6.21.2"
   },
   "devDependencies": {
     "@types/react": "^18.2.43",
