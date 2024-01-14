@@ -16,7 +16,7 @@ export const PreviewSocialLinks = ({ profileData }) => {
           return item?.url &&
             <li key={item.name} aria-label={capilaze(item.name)}>
               <a
-                href={item.url}
+                href={item.name === 'email' ? `mailto:${item.url}` : item.url}
                 title={capilaze(item.name)}
                 className='block hover:scale-105 transition-transform'
                 target='_blank' rel='noreferrer'

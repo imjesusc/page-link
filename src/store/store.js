@@ -10,7 +10,7 @@ export const useStore = create((set) => ({
     instagram: '',
     github: '',
     linkedin: '',
-    whatsapp: ''
+    email: ''
   },
   setProfile: (profile) => set((state) => ({ profile: { ...state.profile, ...profile } }))
 }))
