@@ -1,4 +1,4 @@
-import usePage from '../../hooks'
+import { usePage } from '../../hooks'
 import { Input, Label, Textarea } from '../atoms'
 
 export const ProfileForm = () => {
