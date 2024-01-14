@@ -1,7 +1,7 @@
-import { useStore } from '../../store/store'
+import usePage from '../../hooks/usePage'
 
 export const Preview = () => {
-  const { profile } = useStore()
+  const { profile } = usePage()
 
   return (
     <div className='h-[729px] w-[340px] rounded-[50px] px-4 py-6 ring-8 ring-slate-800 overflow-hidden'>
