@@ -4,7 +4,9 @@ import {
   IconBrandX,
   IconBrandInstagram,
   IconBrandGithubFilled,
-  IconBrandLinkedin
+  IconBrandLinkedin,
+  IconX,
+  IconMail
 } from '@tabler/icons-react'
 
 export const Icons = {
@@ -13,7 +15,9 @@ export const Icons = {
   BrandX: IconBrandX,
   BrandInstagram: IconBrandInstagram,
   BrandGithubFilled: IconBrandGithubFilled,
-  BrandLinkedin: IconBrandLinkedin
+  BrandLinkedin: IconBrandLinkedin,
+  X: IconX,
+  BrandEmail: IconMail
 }
 
 export const socialIcons = {
@@ -22,5 +26,6 @@ export const socialIcons = {
   twitter: IconBrandX,
   instagram: IconBrandInstagram,
   github: IconBrandGithubFilled,
-  linkedin: IconBrandLinkedin
+  linkedin: IconBrandLinkedin,
+  email: IconMail
 }
