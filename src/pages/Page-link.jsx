@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useStore } from '../store'
 import { decode } from 'js-base64'
 import { PreviewSocialLinks } from '../components/molecules'
@@ -26,6 +26,11 @@ export const PageLink = () => {
   }
 
   const data = getUrlData()
+
+  useEffect(() => {
+    globalThis.document.title = data.name
+  }, [])
+
   return (
     <main className='flex flex-col gap-6 p-4 my-10 tablet:my-20'>
       <article className='grid gap-2 justify-items-center'>

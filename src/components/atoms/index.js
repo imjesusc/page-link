@@ -1,4 +1,6 @@
 export * from './Icons'
 export * from './Input'
 export * from './Label'
+export * from './Separator'
 export * from './Textarea'
+export * from './Title'
