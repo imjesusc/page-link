@@ -6,24 +6,26 @@ export const ProfileForm = () => {
   const { profile, handleChange } = usePage()
 
   return (
-    <div>
+    <div className='grid grid-cols-4 gap-3'>
       <Title type='h2'>Profile</Title>
-      <div>
-        <Label htmlFor='name' text='Name' />
-        <Input value={profile.name} id='name' onChange={handleChange} />
-      </div>
+      <div className='grid col-span-3 gap-4'>
+        <div>
+          <Label htmlFor='name' text='Name' />
+          <Input value={profile.name} id='name' onChange={handleChange} />
+        </div>
 
-      <div>
-        <Label htmlFor='description' text='Description' />
-        <Textarea
-          className='resize-none'
-          value={profile.description} id='description' maxLength={99} name='description' onChange={handleChange}
-        />
-      </div>
+        <div>
+          <Label htmlFor='description' text='Description' />
+          <Textarea
+            className='resize-none'
+            value={profile.description} id='description' maxLength={99} name='description' onChange={handleChange}
+          />
+        </div>
 
-      <div>
-        <Label htmlFor='avatar' text='Avatar url' />
-        <Input value={profile.avatar} type='link' id='avatar' onChange={handleChange} />
+        <div>
+          <Label htmlFor='avatar' text='Avatar url' />
+          <Input value={profile.avatar} type='link' id='avatar' onChange={handleChange} />
+        </div>
       </div>
     </div>
   )
