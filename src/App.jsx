@@ -1,18 +1,15 @@
-import { Separator } from './components/atoms/Separator'
-import { ProfileForm, Preview, SocialLinks } from './components/organisms'
-
+import { Route, Routes } from 'react-router-dom'
+import { Home } from './pages/Home'
+import { PageLink } from './pages/Page-link'
 function App () {
   return (
-    <div className='grid grid-cols-2 w-screen h-screen'>
-      <main className='w-full h-full bg-slate-800 p-10 flex flex-col gap-10'>
-        <ProfileForm />
-        <Separator type='horizontal' />
-        <SocialLinks />
-      </main>
-      <section className='grid place-items-center'>
-        <Preview />
-      </section>
+    <div>
+      <Routes>
+        <Route path='/*' element={<Home />} />
+        <Route path='/page-link/*' element={<PageLink />} />
+      </Routes>
     </div>
+
   )
 }
 
