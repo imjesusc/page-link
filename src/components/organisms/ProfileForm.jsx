@@ -1,12 +1,13 @@
 import { usePage } from '../../hooks'
 import { Input, Label, Textarea } from '../atoms'
+import { Title } from '../atoms/Title'
 
 export const ProfileForm = () => {
   const { profile, handleChange } = usePage()
 
   return (
     <div>
-      <div>Profile</div>
+      <Title type='h2'>Profile</Title>
       <div>
         <Label htmlFor='name' text='Name' />
         <Input value={profile.name} id='name' onChange={handleChange} />
@@ -14,7 +15,10 @@ export const ProfileForm = () => {
 
       <div>
         <Label htmlFor='description' text='Description' />
-        <Textarea value={profile.description} id='description' name='description' onChange={handleChange} />
+        <Textarea
+          className='resize-none'
+          value={profile.description} id='description' maxLength={99} name='description' onChange={handleChange}
+        />
       </div>
 
       <div>
