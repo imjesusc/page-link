@@ -15,3 +15,12 @@ export const Icons = {
   BrandGithubFilled: IconBrandGithubFilled,
   BrandLinkedin: IconBrandLinkedin
 }
+
+export const socialIcons = {
+  whatsapp: IconBrandWhatsapp,
+  facebook: IconBrandFacebookFilled,
+  twitter: IconBrandX,
+  instagram: IconBrandInstagram,
+  github: IconBrandGithubFilled,
+  linkedin: IconBrandLinkedin
+}
