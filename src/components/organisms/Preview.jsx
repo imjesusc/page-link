@@ -6,7 +6,7 @@ export const Preview = () => {
   const { profile } = usePage()
 
   return (
-    <div className='h-[729px] w-[340px] flex flex-col gap-4 rounded-[50px] px-4 py-6 ring-8 ring-slate-800 overflow-hidden'>
+    <div className='h-[729px] w-[340px] flex flex-col gap-4 rounded-[50px] px-4 py-10 ring-8 ring-slate-800 overflow-hidden'>
       <article className='grid'>
         {profile.avatar &&
         (

@@ -18,7 +18,7 @@ export const ProfileForm = () => {
           <Label htmlFor='description' text='Description' />
           <Textarea
             className='resize-none'
-            value={profile.description} id='description' maxLength={99} name='description' onChange={handleChange}
+            value={profile.description} id='description' maxLength={150} name='description' onChange={handleChange}
           />
         </div>
 
