@@ -5,8 +5,8 @@ export const PostsField = ({ handlePost }) => {
   return (
     <article className='grid col-span-3 gap-2'>
       <div>
-        <Label htmlFor='img-post' text='Image url' />
-        <Input type='link' id='img-post' onChange={handlePost} />
+        <Label htmlFor='imgPost' text='Image url' />
+        <Input type='link' id='imgPost' onChange={handlePost} />
       </div>
       <div>
         <Label htmlFor='post' text='Post' />
