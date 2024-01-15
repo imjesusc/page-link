@@ -2,7 +2,7 @@ import React from 'react'
 import { Posts, Preview, ProfileForm, SocialLinks } from '../components/organisms'
 import { cn } from '../utils'
 import { useNavigate } from 'react-router-dom'
-import { Separator } from '../components/atoms'
+import { Icons, Separator } from '../components/atoms'
 
 export const Home = () => {
   const navigate = useNavigate()
@@ -23,10 +23,11 @@ export const Home = () => {
       <section className='h-screen w-full p-20 grid place-items-center relative'>
         <button
           onClick={handleDeploy}
-          className={cn('px-2 py-1 rounded shadow-lg bg-white text-black ',
-            'active:translate-y-[1px] absolute top-2 right-2')}
+          className={cn('px-2 py-1 rounded flex gap-1 items-center shadow-lg bg-white text-black ',
+            'absolute top-2 right-2')}
         >
-          Deploy
+          Publish
+          <Icons.ExternalIcon className='w-4 h-4' />
         </button>
         <Preview />
       </section>

@@ -1,9 +1,10 @@
 import React from 'react'
 import { Icons } from '../atoms'
+import { cn } from '../../utils'
 
-export const PreviewPosts = ({ posts }) => {
+export const PreviewPosts = ({ posts, className }) => {
   return (
-    <div className='grid grid-cols-2 gap-4'>
+    <div className={cn('grid grid-cols-2 gap-4', className)}>
       {
     posts.length > 0 && (
       posts.map((postItem, index) => (
