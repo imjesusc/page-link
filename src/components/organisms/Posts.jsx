@@ -1,19 +1,9 @@
 import { PostsField } from '../molecules'
 import { Title } from '../atoms'
-import { useState } from 'react'
+import { usePosts } from '../../hooks'
 
 export const Posts = () => {
-  const [posts, setPosts] = useState([{}])
-
-  const addNewPostField = () => {
-    setPosts([...posts, { /* Datos para la nueva publicación */ }])
-  }
-
-  const removePostField = (index) => {
-    const updatedPosts = [...posts]
-    updatedPosts.splice(index, 1)
-    setPosts(updatedPosts)
-  }
+  const { posts, addNewPostField, handlePostChange, removePostField } = usePosts()
 
   return (
     <section className='grid grid-cols-4 gap-3'>
@@ -22,7 +12,7 @@ export const Posts = () => {
       <div className='grid col-span-3 gap-4'>
         {posts.map((post, index) => (
           <div className='flex gap-2 flex-col border rounded-lg p-4' key={index}>
-            <PostsField postData={post} />
+            <PostsField handlePost={(event) => handlePostChange(event, index)} postData={post} />
             <button onClick={() => removePostField(index)} className='border px-2 text-black bg-gray-100 py-1 rounded-lg'>Remove</button>
           </div>
         ))}
