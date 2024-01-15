@@ -1,12 +1,9 @@
-import { decode, encode } from 'js-base64'
 import { useStore } from '../store'
 import { useEffect } from 'react'
+import { decodeData, encodeData } from '../utils'
 
 export const useControl = () => {
   const { profile, setProfile, setPosts, posts } = useStore()
-
-  const encodeData = (value) => encode(value)
-  const decodeData = (value) => (value ? decode(value) : '')
 
   const updateUrl = (profile, posts) => {
     const encodedDataProfile = encodeData(JSON.stringify(profile))
