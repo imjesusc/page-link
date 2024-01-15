@@ -3,49 +3,10 @@ import { useStore } from '../store'
 import { decode, encode } from 'js-base64'
 
 const usePage = () => {
-  const { profile, setProfile } = useStore()
+  const { profile, setProfile, posts, setPosts } = useStore()
 
   const encodeData = (value) => encode(value)
   const decodeData = (value) => (value ? decode(value) : '')
-
-  // const metaData = [
-  //   {
-  //     id: 'name',
-  //     label: 'Name'
-  //   },
-  //   {
-  //     id: 'description',
-  //     label: 'Description'
-  //   },
-  //   {
-  //     id: 'avatar',
-  //     label: 'Avatar'
-  //   },
-  //   {
-  //     id: 'facebook',
-  //     label: 'Facebook'
-  //   },
-  //   {
-  //     id: 'twitter',
-  //     label: 'Twitter'
-  //   },
-  //   {
-  //     id: 'instagram',
-  //     label: 'Instagram'
-  //   },
-  //   {
-  //     id: 'github',
-  //     label: 'Github'
-  //   },
-  //   {
-  //     id: 'linkedin',
-  //     label: 'LinkedIn'
-  //   },
-  //   {
-  //     id: 'whatsapp',
-  //     label: 'Whatsapp'
-  //   }
-  // ]
 
   const generateEncodedData = (updatedData) => {
   // Get the keys of the updatedData object
@@ -63,28 +24,39 @@ const usePage = () => {
 
   const updateEncodedData = (updatedData) => {
     const newEncodedData = generateEncodedData(updatedData)
+    // const newPosts = posts.map((post) => {
+    //   const keys = Object.keys(post)
+    //   return keys.filter((key) => key).map((key) => encodeData(post[key])).join('|')
+    // })
+
+    const combinedPosts = encodeData(JSON.stringify(posts || []))
     // Update the URL with the new encoded data
-    window.history.replaceState(null, '', `/${newEncodedData}`)
+    window.history.replaceState(null, '', `/${newEncodedData}posts${combinedPosts}`)
   }
 
   const initData = () => {
     // Extract pathname from window location
     const { pathname } = window.location
+    if (pathname === '/') return
+    const [profileData, postData] = pathname.split('posts')
+
+    const decodedProfileData = profileData.slice(1).split('%7C')
+    const decodedPostData = JSON.parse(decodeData(postData || '[]'))
+
     const keys = Object.keys(profile)
     const decodedData = {}
 
     // Split the pathname by '%7C' to extract the data
-    const data = pathname.slice(1).split('%7C')
-
-    if (keys.length !== data.length) {
+    if (keys.length !== decodedProfileData.length) {
       return console.log('Error: Inconsistency in keys and data length.')
     }
 
     keys.forEach((key, index) => {
-      decodedData[key] = decodeData(data[index])
+      decodedData[key] = decodeData(decodedProfileData[index])
     })
     // Decode the extracted values and set them in the profile object
     setProfile(decodedData)
+    setPosts(decodedPostData)
   }
 
   useEffect(() => {
@@ -110,6 +82,7 @@ const usePage = () => {
 
   return {
     profile,
+    posts,
     handleChange
   }
 }
