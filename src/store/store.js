@@ -12,5 +12,8 @@ export const useStore = create((set) => ({
     linkedin: '',
     email: ''
   },
-  setProfile: (profile) => set((state) => ({ profile: { ...state.profile, ...profile } }))
+  posts: [],
+
+  setProfile: (profile) => set((state) => ({ profile: { ...state.profile, ...profile } })),
+  setPosts: (posts) => set({ posts })
 }))
