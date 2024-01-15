@@ -1,12 +1,12 @@
 import usePage from '../../hooks/usePage'
 import { Title } from '../atoms/Title'
-import { PreviewSocialLinks } from '../molecules'
+import { PreviewPosts, PreviewSocialLinks } from '../molecules'
 
 export const Preview = () => {
-  const { profile } = usePage()
+  const { profile, posts } = usePage()
 
   return (
-    <div className='aspect-[1/2] flex flex-col gap-4 h-full w-auto rounded-[50px] px-4 py-10 ring-8 ring-slate-800 overflow-hidden'>
+    <div className='aspect-[1/2] preview-bar flex flex-col gap-4 h-full w-auto rounded-[50px] px-4 py-10 ring-8 ring-slate-800 overflow-hidden overflow-y-auto'>
       <article className='grid'>
         {profile.avatar &&
         (
@@ -21,6 +21,11 @@ export const Preview = () => {
 
       <article>
         <PreviewSocialLinks profileData={profile} />
+      </article>
+
+      <article className='grid gap-2'>
+        {posts.length > 0 && <Title type='h2' className='text-xl font-semibold'>Posts</Title>}
+        <PreviewPosts posts={posts} />
       </article>
     </div>
   )

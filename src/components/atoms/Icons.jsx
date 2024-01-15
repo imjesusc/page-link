@@ -1,4 +1,5 @@
 import {
+  IconExternalLink,
   IconBrandWhatsapp,
   IconBrandFacebookFilled,
   IconBrandX,
@@ -17,7 +18,8 @@ export const Icons = {
   BrandGithubFilled: IconBrandGithubFilled,
   BrandLinkedin: IconBrandLinkedin,
   X: IconX,
-  BrandEmail: IconMail
+  BrandEmail: IconMail,
+  ExternalIcon: IconExternalLink
 }
 
 export const socialIcons = {
