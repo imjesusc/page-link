@@ -1,6 +1,6 @@
 import React from 'react'
 import { Icons, Input, Label } from '../atoms'
-import { usePage } from '../../hooks'
+import { useControl } from '../../hooks'
 import { Title } from '../atoms/Title'
 
 const socialMediaData = [
@@ -12,11 +12,7 @@ const socialMediaData = [
   { id: 'email', label: 'Email', icon: Icons.BrandEmail }
 ]
 export const SocialLinks = () => {
-  const { profile, handleChange } = usePage()
-
-  const handleResetInput = (id) => {
-    handleChange({ target: { id, value: '' } })
-  }
+  const { profile, handleProfileChange, handleResetInput } = useControl()
 
   return (
     <section className='grid grid-cols-4 gap-3'>
@@ -32,7 +28,7 @@ export const SocialLinks = () => {
                 className='border-0 p-1 rounded-none'
                 value={profile[item.id]}
                 id={item.id}
-                onChange={handleChange}
+                onChange={handleProfileChange}
               />
               <button
                 onClick={() => handleResetInput(item.id)}

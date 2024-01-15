@@ -1,20 +1,20 @@
 import React from 'react'
 import { Input, Label, Textarea } from '../atoms'
 
-export const PostsField = ({ handlePost }) => {
+export const PostsField = ({ handlePost, defaulValues }) => {
   return (
     <article className='grid col-span-3 gap-2'>
       <div>
         <Label htmlFor='imgPost' text='Image url' />
-        <Input type='link' id='imgPost' onChange={handlePost} />
+        <Input value={defaulValues?.imgPost ? defaulValues?.imgPost : ''} type='link' id='imgPost' onChange={handlePost} />
       </div>
       <div>
         <Label htmlFor='post' text='Post' />
-        <Textarea type='text' maxLength={150} id='post' onChange={handlePost} />
+        <Textarea value={defaulValues?.post ? defaulValues?.post : ''} type='text' maxLength={150} id='post' onChange={handlePost} />
       </div>
       <div>
         <Label htmlFor='link' text='Link' />
-        <Input type='link' id='link' onChange={handlePost} />
+        <Input value={defaulValues?.link ? defaulValues?.link : ''} type='link' id='link' onChange={handlePost} />
       </div>
     </article>
   )

@@ -1,9 +1,9 @@
-import { usePage } from '../../hooks'
 import { Input, Label, Textarea } from '../atoms'
 import { Title } from '../atoms/Title'
+import { useControl } from '../../hooks/useControl'
 
 export const ProfileForm = () => {
-  const { profile, handleChange } = usePage()
+  const { profile, handleProfileChange } = useControl()
 
   return (
     <div className='grid grid-cols-4 gap-3'>
@@ -11,20 +11,21 @@ export const ProfileForm = () => {
       <div className='grid col-span-3 gap-4'>
         <div>
           <Label htmlFor='name' text='Name' />
-          <Input value={profile.name} id='name' onChange={handleChange} />
+          <Input value={profile?.name} id='name' onChange={handleProfileChange} />
         </div>
 
         <div>
           <Label htmlFor='description' text='Description' />
           <Textarea
+            value={profile?.description}
             className='resize-none'
-            value={profile.description} id='description' maxLength={150} name='description' onChange={handleChange}
+            id='description' maxLength={150} name='description' onChange={handleProfileChange}
           />
         </div>
 
         <div>
           <Label htmlFor='avatar' text='Avatar url' />
-          <Input value={profile.avatar} type='link' id='avatar' onChange={handleChange} />
+          <Input value={profile?.avatar} type='link' id='avatar' onChange={handleProfileChange} />
         </div>
       </div>
     </div>

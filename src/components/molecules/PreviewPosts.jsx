@@ -12,10 +12,10 @@ export const PreviewPosts = ({ posts }) => {
             <a
               href={postItem.link}
               aria-label={postItem.post} target='_blank'
-              className='block w-auto absolute z-10 bg-gray-100/50 rounded-full p-1 top-2 right-2'
+              className='block w-auto absolute z-10 bg-black/50 rounded-full p-1 top-2 right-2'
               rel='noreferrer'
             >
-              <Icons.ExternalIcon className='w-5 h-5 ' />
+              <Icons.ExternalIcon className='w-5 h-5 text-white' />
             </a>
             <figure className='w-full rounded-lg h-40'>
               <img src={postItem.imgPost} className='w-full rounded-lg h-full  object-cover' />

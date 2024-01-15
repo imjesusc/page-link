@@ -1,8 +1,8 @@
 import React from 'react'
-import { Preview, ProfileForm, SocialLinks, Posts } from '../components/organisms'
-import { Separator } from '../components/atoms'
+import { Posts, Preview, ProfileForm, SocialLinks } from '../components/organisms'
 import { cn } from '../utils'
 import { useNavigate } from 'react-router-dom'
+import { Separator } from '../components/atoms'
 
 export const Home = () => {
   const navigate = useNavigate()
