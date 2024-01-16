@@ -7,7 +7,7 @@ export const Preview = () => {
   const { profile, posts } = useControl()
 
   return (
-    <div className={cn('aspect-[1/2] preview-bar flex flex-col gap-4 h-full w-auto rounded-[50px] px-4 py-10 ring-8',
+    <div className={cn('aspect-[1/2] bg-white preview-bar flex flex-col gap-4 h-full w-auto rounded-[50px] px-4 py-10 ring-8',
       ' ring-slate-800 overflow-hidden overflow-y-auto')}
     >
       <article className='grid'>
