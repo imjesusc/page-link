@@ -25,7 +25,7 @@ export const SocialLinks = () => {
             <div className='flex border rounded-lg items-center overflow-hidden'>
               <span className='min-w-10 p-2 grid place-items-center'>{item.icon && <item.icon className='w-full h-full' />}</span>
               <Input
-                className='border-0 p-1 rounded-none'
+                className='border-0 ring-0 p-1 rounded-none'
                 value={profile[item.id]}
                 id={item.id}
                 onChange={handleProfileChange}

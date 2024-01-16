@@ -3,8 +3,8 @@ import { cn } from '../../utils'
 
 export const Separator = ({ type = 'vertical', className }) => {
   const types = {
-    vertical: 'w-[1px] h-full bg-gray-400',
-    horizontal: 'w-full min-h-[1px] bg-gray-400'
+    vertical: 'w-[1px] h-full bg-purple-400/40',
+    horizontal: 'w-full min-h-[1px] bg-purple-400/40'
   }
   return (
     <span className={cn(types[type], className)} />

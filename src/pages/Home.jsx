@@ -13,7 +13,7 @@ export const Home = () => {
 
   return (
     <div className='grid tablet:grid-cols-2 overflow-y-auto overflow-x-hidden w-screen tablet:h-screen'>
-      <main className='w-full tablet:h-screen overflow-x-auto bg-slate-800 p-4 tablet:p-10 flex flex-col gap-10'>
+      <main className='w-full tablet:h-screen overflow-x-auto p-4 tablet:p-10 flex flex-col gap-10'>
         <ProfileForm />
         <Separator type='horizontal' />
         <SocialLinks />

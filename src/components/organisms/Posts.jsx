@@ -16,7 +16,7 @@ export const Posts = () => {
           </div>
         ))}
 
-        <button onClick={addNewPostField} className='px-2 bg-blue-500 py-1 rounded-lg'>Add</button>
+        <button onClick={addNewPostField} className='px-2 bg-purple-400 text-white py-1 rounded-lg'>Add</button>
       </div>
     </section>
   )

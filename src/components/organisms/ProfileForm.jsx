@@ -19,7 +19,7 @@ export const ProfileForm = () => {
           <Textarea
             value={profile?.description}
             className='resize-none'
-            id='description' maxLength={150} name='description' onChange={handleProfileChange}
+            id='description' maxLength={300} name='description' onChange={handleProfileChange}
           />
         </div>
 
