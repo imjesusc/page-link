@@ -12,15 +12,15 @@ export const Home = () => {
   }
 
   return (
-    <div className='grid grid-cols-2 overflow-hidden w-screen h-screen'>
-      <main className='w-full h-screen overflow-x-auto bg-slate-800 p-10 flex flex-col gap-10'>
+    <div className='grid tablet:grid-cols-2 overflow-y-auto overflow-x-hidden w-screen tablet:h-screen'>
+      <main className='w-full tablet:h-screen overflow-x-auto bg-slate-800 p-4 tablet:p-10 flex flex-col gap-10'>
         <ProfileForm />
         <Separator type='horizontal' />
         <SocialLinks />
         <Separator type='horizontal' />
         <Posts />
       </main>
-      <section className='h-screen w-full p-20 grid place-items-center relative'>
+      <section className='w-full p-4 tablet:p-20 grid place-items-center relative tablet:h-screen'>
         <button
           onClick={handleDeploy}
           className={cn('px-2 py-1 rounded flex gap-1 items-center shadow-lg bg-white text-black ',

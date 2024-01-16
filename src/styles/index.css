@@ -9,6 +9,8 @@ body {
   color-scheme: black light;
   background-color: black;
   color: white;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 /* Firefox */

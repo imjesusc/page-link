@@ -6,7 +6,7 @@ export const ProfileForm = () => {
   const { profile, handleProfileChange } = useControl()
 
   return (
-    <div className='grid grid-cols-4 gap-3'>
+    <div className='grid tablet:grid-cols-4 gap-3'>
       <Title type='h2'>Profile</Title>
       <div className='grid col-span-3 gap-4'>
         <div>

@@ -5,7 +5,7 @@ import { useControl } from '../../hooks'
 export const Posts = () => {
   const { posts, handlePostChange, addNewPostField, removePostField } = useControl()
   return (
-    <section className='grid grid-cols-4 gap-3'>
+    <section className='grid tablet:grid-cols-4 gap-3'>
       <Title type='h2'>Posts</Title>
 
       <div className='grid col-span-3 gap-4'>

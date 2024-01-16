@@ -15,7 +15,7 @@ export const SocialLinks = () => {
   const { profile, handleProfileChange, handleResetInput } = useControl()
 
   return (
-    <section className='grid grid-cols-4 gap-3'>
+    <section className='grid tablet:grid-cols-4 gap-3'>
       <Title type='h2'>Social Links</Title>
 
       <div className='grid grid-cols-2 col-span-3 gap-4'>
