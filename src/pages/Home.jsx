@@ -20,7 +20,7 @@ export const Home = () => {
         <Separator type='horizontal' />
         <Posts />
       </main>
-      <section className='w-full p-4 tablet:p-20 grid place-items-center relative tablet:h-screen'>
+      <section className='w-full p-4 tablet:p-20 grid place-items-center relative h-screen'>
         <button
           onClick={handleDeploy}
           className={cn('px-2 py-1 rounded flex gap-1 items-center shadow-lg bg-white text-black ',
