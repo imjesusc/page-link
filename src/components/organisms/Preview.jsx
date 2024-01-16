@@ -18,7 +18,7 @@ export const Preview = () => {
           </figure>
         )}
 
-        <Title type='h2' className='text-xl  font-semibold text-center'>{profile?.name}</Title>
+        <Title type='h2' className='text-2xl  font-semibold text-center'>{profile?.name}</Title>
         <p className='text-balance text-center text-gray-400'>{profile?.description}</p>
       </article>
 
@@ -27,7 +27,7 @@ export const Preview = () => {
       </article>
 
       <article className='grid gap-2'>
-        {posts.length > 0 && <Title type='h2' className='text-xl font-semibold'>Posts</Title>}
+        {posts.length > 0 && <Title type='h2' className='text-lg font-medium'>Posts</Title>}
         <PreviewPosts posts={posts} />
       </article>
     </div>

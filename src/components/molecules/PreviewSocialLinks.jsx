@@ -1,8 +1,8 @@
 import React from 'react'
-import { capilaze } from '../../utils'
+import { capilaze, cn } from '../../utils'
 import { socialIcons } from '../atoms/Icons'
 
-export const PreviewSocialLinks = ({ profileData }) => {
+export const PreviewSocialLinks = ({ profileData, className }) => {
   const getSocialLinks = () => {
     return Object.entries(profileData)
       .slice(3)
@@ -10,7 +10,7 @@ export const PreviewSocialLinks = ({ profileData }) => {
       .map(([key, value]) => ({ name: key, url: value, icon: socialIcons[key] }))
   }
   return (
-    <ul className='flex items-center justify-center gap-3' aria-label='Social Links'>
+    <ul className={cn('flex items-center justify-center gap-3', className)} aria-label='Social Links'>
       {
         getSocialLinks()?.map((item) => {
           return item?.url &&

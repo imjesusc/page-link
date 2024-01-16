@@ -20,28 +20,33 @@ export const PageLink = () => {
   const { profile, posts } = getUrlData()
 
   useEffect(() => {
-    globalThis.document.title = profile.name + '| Page link'
+    globalThis.document.title = profile.name
   }, [])
 
   return (
     <main className='flex flex-col gap-6 p-4 my-10 tablet:my-20 max-w-[800px] mx-auto'>
-      <article className='grid gap-2 justify-items-center'>
+      <article className='grid justify-items-center tablet:justify-items-start tablet:grid-cols-[auto_1fr] gap-x-10 gap-y-3'>
         {profile.avatar &&
       (
-        <figure className='h-40 w-40 mb-3 rounded-full overflow-hidden ring ring-gray-400 mx-auto'>
+        <figure className={cn('w-20 h-20 tablet:h-40 tablet:w-40 mb-3 rounded-full',
+          ' overflow-hidden ring ring-gray-400 mx-auto row-span-3')}
+        >
           <img src={profile.avatar} className='w-full h-full border-0 object-cover rounded-full' />
         </figure>
       )}
 
-        <Title type='h1' className='font-semibold text-center'>{profile.name}</Title>
-        <p className='text-lg text-balance text-center text-gray-400 max-w-[500px]'>{profile.description}</p>
-      </article>
+        <Title type='h1' className='text-3xl tablet:text-4xl text-center font-semibold'>{profile.name}</Title>
+        <p className='text-base tablet:text-lg text-pretty text-gray-400 text-center tablet:text-left'>{profile.description}</p>
 
-      <PreviewSocialLinks profileData={profile} />
+        <PreviewSocialLinks className='justify-start' profileData={profile} />
+      </article>
 
       <section className='grid gap-2 mt-10'>
         {posts.length > 0 && <Title type='h2' className='text-xl font-semibold'>Posts</Title>}
-        <PreviewPosts posts={posts} className={cn(posts.length > 2 ? 'tablet:grid-cols-3' : 'grid-cols-2')} />
+        <PreviewPosts
+          posts={posts}
+          className={cn(posts.length > 2 ? 'tablet:grid-cols-3' : posts.length > 1 ? 'tablet:grid-cols-2' : 'justify-items-center grid-cols-1')}
+        />
       </section>
 
     </main>
