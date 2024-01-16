@@ -4,7 +4,7 @@ import { cn } from '../../utils'
 
 export const PreviewPosts = ({ posts, className }) => {
   return (
-    <div className={cn('grid grid-cols-2 gap-4', className)}>
+    <div className={cn('grid grid-cols-2 gap-x-4 gap-y-6', className)}>
       {
     posts.length > 0 && (
       posts.map((postItem, index) => (
@@ -18,7 +18,7 @@ export const PreviewPosts = ({ posts, className }) => {
             >
               <Icons.ExternalIcon className='w-5 h-5 text-white' />
             </a>
-            <figure className='w-full rounded-lg h-40'>
+            <figure className='ring-2 ring-purple-400/20 w-full rounded-lg h-40'>
               <img src={postItem.imgPost} className='w-full rounded-lg h-full  object-cover' />
             </figure>
             <p className='text-balance text-start text-gray-400'>{postItem.post}</p>

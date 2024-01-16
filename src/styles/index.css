@@ -29,7 +29,3 @@ body {
   background-color: #d1d1d1;
   border-radius: 10px;
 }
-
-.preview-bar::-webkit-scrollbar-thumb {
-  background-color: #424040;
-}

@@ -34,7 +34,7 @@ export const PageLink = () => {
       <article className='grid justify-items-center gap-x-10 gap-y-3'>
         {profile.avatar &&
       (
-        <figure className={cn('w-24 h-24 tablet:h-40 tablet:w-40 mb-3 rounded-full',
+        <figure className={cn('w-24  h-24 tablet:h-40 tablet:w-40 mb-3 rounded-full',
           ' overflow-hidden ring-8 ring-purple-400/20 mx-auto row-span-3')}
         >
           <img src={profile.avatar} className='w-full h-full border-0 object-cover rounded-full' />
