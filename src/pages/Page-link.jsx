@@ -35,7 +35,7 @@ export const PageLink = () => {
         {profile.avatar &&
       (
         <figure className={cn('w-24 h-24 tablet:h-40 tablet:w-40 mb-3 rounded-full',
-          ' overflow-hidden ring-4 ring-gray-100/50 mx-auto row-span-3')}
+          ' overflow-hidden ring-8 ring-purple-400/20 mx-auto row-span-3')}
         >
           <img src={profile.avatar} className='w-full h-full border-0 object-cover rounded-full' />
         </figure>

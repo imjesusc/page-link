@@ -13,7 +13,7 @@ export const Preview = () => {
       <article className='grid'>
         {profile?.avatar &&
         (
-          <figure className='w-20 h-20 mb-3 rounded-full overflow-hidden ring ring-gray-400 mx-auto'>
+          <figure className='w-20 h-20 mb-3 rounded-full overflow-hidden ring-4 ring-purple-400/20 mx-auto'>
             <img src={profile?.avatar} className='w-full h-full border-0 object-cover rounded-full' />
           </figure>
         )}
