@@ -71,6 +71,7 @@ export const useControl = () => {
     const updatedPosts = [...posts]
     updatedPosts.splice(index, 1)
     setPosts(updatedPosts)
+    updateUrl(profile, updatedPosts)
   }
 
   return {
