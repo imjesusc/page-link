@@ -13,7 +13,7 @@ export const Preview = () => {
 
 	return (
 		<section className={cn('aspect-[1/2.1]  relative   h-full pb-10  py-2 w-auto rounded-[60px] overflow-hidden')}>
-			<img src="/phone.png" className="pointer-events-none absolute  top-0 z-50 h-full w-full object-cover" />
+			<img src="/phone.png" className="pointer-events-none absolute  top-0 z-20 h-full w-full object-cover" />
 
 			<div className="overflow-y-auto py-16 pl-7 bg-white rounded-[60px] pr-5 flex flex-col gap-4 h-full w-full overflow-hidden">
 				<ProfileInfo

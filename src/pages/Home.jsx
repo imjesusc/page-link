@@ -1,6 +1,6 @@
 import React from 'react'
 import { PostSetForm, Preview, ProfileForm, SocialLinks } from '../components/organisms'
-import { cn } from '../utils'
+import { cn, copyToClipboard } from '../utils'
 import { useNavigate } from 'react-router-dom'
 import { Title } from '../components/atoms'
 import { Icons } from '../components/ui/icons'
@@ -31,6 +31,12 @@ export const Home = () => {
 		window.location.reload()
 	}
 
+	const handleCopy = async () => {
+		const { protocol, hostname, port, pathname } = window.location
+		const url = `${protocol}//${hostname}:${port}/page-link${pathname}`
+		await copyToClipboard(url)
+	}
+
 	return (
 		<div className="bg-[#282a36]">
 			<main className="grid relative py-5 tablet:p-0 tablet:grid-cols-2 container overflow-y-auto overflow-x-hidden w-screen tablet:h-screen">
@@ -57,10 +63,17 @@ export const Home = () => {
 				</section>
 
 				<section className="w-full p-4  tablet:p-20 grid place-items-center relative h-screen">
+					<p className="text-muted-foreground absolute z-50 bg-white rounded-xl tablet:bg-transparent  bottom-0 left-0 p-2">
+						The URL is quite lengthy. Consider using a URL shortener like{' '}
+						<a target="_blank" href="https://slugs.vercel.app" className="text-[#ff79c6] underline ">
+							Slug Generator
+						</a>{' '}
+						to streamline it.
+					</p>
 					<button
 						onClick={handlePublish}
 						className={cn(
-							'h-10 fixed top-10 right-10 hover:bg-[#ec7bb7] transition-colors w-24 flex items-center justify-center bg-[#f54ea7] text-white rounded-lg'
+							'h-10 fixed top-3 right-3 tablet:top-10 z-50 tablet:right-10 hover:bg-[#ec7bb7] transition-colors w-24 flex items-center justify-center bg-[#f54ea7] text-white rounded-lg'
 						)}
 					>
 						{isPublished ? <Icons.loader className="animate-spin" /> : <span>Publish</span>}
@@ -69,10 +82,19 @@ export const Home = () => {
 					<button
 						onClick={handleReset}
 						className={cn(
-							'h-10 fixed  top-24 right-10 hover:bg-accent transition-colors hover:text-black  w-24 flex items-center  text-white justify-center rounded-lg'
+							'h-10 fixed top-16 bg-white/10 right-3 tablet:top-24 z-50 tablet:right-10 hover:bg-accent transition-colors hover:text-black  w-24 flex items-center  text-white justify-center rounded-lg'
 						)}
 					>
-						{false ? <Icons.loader className="animate-spin" /> : <span>Reset</span>}
+						<span>Reset</span>
+					</button>
+
+					<button
+						onClick={handleCopy}
+						className={cn(
+							'h-10 fixed top-[115px] bg-white/10 right-3 tablet:top-[150px] z-50 tablet:right-10 hover:bg-accent transition-colors hover:text-black  w-24 flex items-center  text-white justify-center rounded-lg'
+						)}
+					>
+						{false ? <Icons.loader className="animate-spin" /> : <span>Copy Link</span>}
 					</button>
 					<Preview />
 				</section>

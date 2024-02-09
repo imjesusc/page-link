@@ -1,4 +1,7 @@
 export * from './capitalize'
 export * from './cn'
+export * from './copy-to-clipboard'
 export * from './decodeData'
 export * from './encodeData'
+export * from './reverse-data-arr.utilie'
+export * from './separate-col.utilitie'
