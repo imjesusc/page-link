@@ -32,7 +32,7 @@ export const SocialLinks = ({ profileData, className }) => {
 								href={item.name === 'email' ? `mailto:${item.url}` : item.url}
 								title={capilaze(item.name)}
 								className={cn(
-									'block text-[#52525b]  bg-accent dark:bg-card/60 p-2 shadow-sm',
+									'block text-[#52525b] bg-accent dark:bg-muted p-2 shadow-sm',
 									'rounded-full border hover:scale-105 transition-transform duration-500'
 								)}
 								target="_blank"

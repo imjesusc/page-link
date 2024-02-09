@@ -1,48 +1,82 @@
 import React from 'react'
-import { Posts, Preview, ProfileForm, SocialLinks } from '../components/organisms'
+import { PostSetForm, Preview, ProfileForm, SocialLinks } from '../components/organisms'
 import { cn } from '../utils'
 import { useNavigate } from 'react-router-dom'
-import { Separator } from '../components/atoms'
+import { Title } from '../components/atoms'
+import { Icons } from '../components/ui/icons'
+import toast from 'react-hot-toast'
 
 export const Home = () => {
-  const navigate = useNavigate()
-  const [isPublished, setIsPublished] = React.useState(false)
-  const handlePublish = () => {
-    setIsPublished(true)
-    const { pathname } = window.location
-    setTimeout(() => {
-      navigate('/page-link' + pathname)
-    }, 300)
-  }
+	const navigate = useNavigate()
+	const [isPublished, setIsPublished] = React.useState(false)
+	const handlePublish = async () => {
+		try {
+			setIsPublished(true)
 
-  return (
-    <div className='grid tablet:grid-cols-2 overflow-y-auto overflow-x-hidden w-screen tablet:h-screen'>
-      <main className='w-full tablet:h-screen overflow-x-auto p-4 tablet:p-10 flex flex-col gap-10'>
-        <ProfileForm />
-        <Separator type='horizontal' />
-        <SocialLinks />
-        <Separator type='horizontal' />
-        <Posts />
-      </main>
-      <section className='w-full p-4 bg-purple-50 tablet:p-20 grid place-items-center relative h-screen'>
-        <button
-          onClick={handlePublish}
-          className={cn('px-2 py-1 h-10 rounded-lg  hover:opacity-80 transition-opacity flex gap-1 items-center',
-            ' shadow-lg bg-purple-400 text-white w-20',
-            'absolute top-2 right-2 grid place-content-center')}
-        >
-          {isPublished
-            ? (
-              <svg class='animate-spin h-5 w-5 text-white' xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24'>
-                <circle class='opacity-25' cx='12' cy='12' r='10' stroke='currentColor' stroke-width='4' />
-                <path class='opacity-75' fill='currentColor' d='M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z' />
-              </svg>
-              )
-            : <span>Publish</span>}
+			const { pathname } = window.location
+			if (pathname === '/') return toast.error('Please fill in the profile section.')
 
-        </button>
-        <Preview />
-      </section>
-    </div>
-  )
+			await new Promise(resolve => setTimeout(resolve, 300))
+			toast.success('Page created successfully!', { icon: '🎉.' })
+			navigate('/page-link' + pathname)
+		} catch (error) {
+			console.log(error)
+		} finally {
+			setIsPublished(false)
+		}
+	}
+
+	const handleReset = () => {
+		navigate('/')
+		window.location.reload()
+	}
+
+	return (
+		<div className="bg-[#282a36]">
+			<main className="grid relative py-5 tablet:p-0 tablet:grid-cols-2 container overflow-y-auto overflow-x-hidden w-screen tablet:h-screen">
+				<section className="w-full tablet:h-screen overflow-x-auto px-4 tablet:p-16 flex flex-col gap-6">
+					<header className="space-y-3">
+						<Title type={'h2'} className="text-3xl font-bold font-sans text-[#ff79c6]">
+							Page Link
+						</Title>
+						<p className="text-accent/60 font-sans">
+							Create your page easily and quickly with Page Link and share it with your friends.
+						</p>
+
+						<ul>
+							<li className="text-[#bd93f9]">1. Complet profile section</li>
+							<li className="text-[#bd93f9]">2. Add social links</li>
+							<li className="text-[#bd93f9]">3. Write a post</li>
+							<li className="text-[#bd93f9]">4. Publish 🎉</li>
+						</ul>
+					</header>
+
+					<ProfileForm />
+					<SocialLinks />
+					<PostSetForm />
+				</section>
+
+				<section className="w-full p-4  tablet:p-20 grid place-items-center relative h-screen">
+					<button
+						onClick={handlePublish}
+						className={cn(
+							'h-10 fixed top-10 right-10 hover:bg-[#ec7bb7] transition-colors w-24 flex items-center justify-center bg-[#f54ea7] text-white rounded-lg'
+						)}
+					>
+						{isPublished ? <Icons.loader className="animate-spin" /> : <span>Publish</span>}
+					</button>
+
+					<button
+						onClick={handleReset}
+						className={cn(
+							'h-10 fixed  top-24 right-10 hover:bg-accent transition-colors hover:text-black  w-24 flex items-center  text-white justify-center rounded-lg'
+						)}
+					>
+						{false ? <Icons.loader className="animate-spin" /> : <span>Reset</span>}
+					</button>
+					<Preview />
+				</section>
+			</main>
+		</div>
+	)
 }
