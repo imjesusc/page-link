@@ -53,7 +53,7 @@ export const PageLink = () => {
 					onClick={toggleTheme}
 					id="theme-toggle"
 					aria-label="Toggle Dark Mode"
-					className="shadow-medium rounded-full p-2 absolute right-0 z-50"
+					className="shadow-medium rounded-full p-2 absolute right-0 -top-1 z-50"
 				>
 					{theme === 'light' ? <Icons.moon /> : <Icons.sun className={'dark:text-white'} />}
 				</button>

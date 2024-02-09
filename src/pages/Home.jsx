@@ -44,10 +44,10 @@ export const Home = () => {
 						</p>
 
 						<ul>
-							<li className="text-[#bd93f9]">1. Complet profile section</li>
+							<li className="text-[#bd93f9]">1. Complete profile section</li>
 							<li className="text-[#bd93f9]">2. Add social links</li>
-							<li className="text-[#bd93f9]">3. Write a post</li>
-							<li className="text-[#bd93f9]">4. Publish 🎉</li>
+							<li className="text-[#bd93f9]">3. Write a posts</li>
+							<li className="text-[#bd93f9]">4. Publish and share link. 🎉</li>
 						</ul>
 					</header>
 

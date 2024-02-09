@@ -15,9 +15,9 @@ export const Preview = () => {
 		<section className={cn('aspect-[1/2.1]  relative   h-full pb-10  py-2 w-auto rounded-[60px] overflow-hidden')}>
 			<img src="/phone.png" className="pointer-events-none absolute  top-0 z-50 h-full w-full object-cover" />
 
-			<div className="overflow-y-auto py-16 pl-7 bg-white rounded-[60px] pr-5 flex flex-col gap-8 h-full w-full overflow-hidden">
+			<div className="overflow-y-auto py-16 pl-7 bg-white rounded-[60px] pr-5 flex flex-col gap-4 h-full w-full overflow-hidden">
 				<ProfileInfo
-					className={'tablet:w-20 tablet:h-20'}
+					className={'[&>figure]:tablet:w-20 [&>figure]:tablet:h-20 [&>p]:text-sm [&>h1]:text-2xl gap-3'}
 					avatar={profile?.avatar}
 					name={profile?.name}
 					description={profile?.description}
