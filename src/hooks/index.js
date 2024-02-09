@@ -1,1 +1,2 @@
-export * from './useControl'
+export * from './useSetData'
+export * from './useTheme'
