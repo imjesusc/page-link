@@ -50,7 +50,7 @@ Ejemplos de Páginas creadas:
 > [!TIP]  
 > Debido al tamaño de la url puedes usar un acortador de links  
 > Aqui tienes una web para acortar links de forma sencilla y 100% gratis  
-> [Url Shortener - Slug generator made by imjesusc](https://slugs.vercel.app).
+> [Url Shortener - Slug generator made by imjesusc](https://my-slug.vercel.app).
 
 ## To implement
 
