@@ -4,11 +4,6 @@
 
 Ir a: [Page Link](https://page-link-ds.vercel.app/)
 
-## Watch result example
-
-https://slugs.vercel.app/s/pastel-ghost-posts  
-https://slugs.vercel.app/s/imjesusc
-
 <p></p>
 
 <img src="./public/preview.png">
